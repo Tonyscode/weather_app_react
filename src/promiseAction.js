@@ -29,7 +29,7 @@ const common = {
   
     let thunk1 = common.promiseActionsMaker(
         'weather', 
-        fetch(`http://api.openweathermap.org/data/2.5/weather?id=${id}&appid=${API_KEY}&units=metric`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?id=${id}&appid=${API_KEY}&units=metric`)
           .then(function(data) { 
             console.log('Data:', data);
             return data.json()
@@ -44,7 +44,7 @@ const common = {
   
     let thunk2 = common.promiseActionsMaker(
         'forecast', 
-        fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${id}&appid=${API_KEY}&units=metric`)
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&appid=${API_KEY}&units=metric`)
           .then(data => 
             data.json()
             )
