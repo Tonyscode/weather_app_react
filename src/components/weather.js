@@ -94,12 +94,12 @@ function changeCity(e){
   const { rememberMe, townSelect, favorits} = this.state;
 }
 
-function addToLocalStore(e) {
+function addToLocalStore() {
   //e.preventDefault(); e.stopPropagation();
   if (this.state.rememberMe == true && this.state.townSelect !== '' ) {
     const { rememberMe, townSelect} = this.state;
     let favorits = localStorage.getItem('favorits');
-    favorits = (favorits.length > 0 ? favorits.split(',') : []) 	
+    favorits = (favorits && favorits.length > 0 ? favorits.split(',') : []) 	
     localStorage.setItem('rememberMe', rememberMe);
     localStorage.setItem('townSelect', rememberMe ? townSelect :'')
     if (favorits.indexOf(this.state.townSelect) == -1) {
